@@ -51,7 +51,7 @@ public class User {
 			String sql="select * from locations where location_id ="+ r.getString("location_Id");
 			ResultSet location = DBQuery.getFromDB(sql);
 			if(location.next()){
-				return ""+location.getString("City")+", "+location.getString("States")
+				return location.getString("City")+", "+location.getString("States")
 						+" "+location.getString("zipcode");
 			}
 		} catch (SQLException e) {
